@@ -1,24 +1,16 @@
-import java.util.Scanner;
-public class palindrome{
-    public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter the number:");
-        int number=sc.nextInt();
-       if(ispalindrome(number)){
-        System.out.println(number +"is a palindrome ");
-       }
-       else{
-        System.out.println(number+"is not a palindrome ");
-       }
-    }
-public static boolean ispalindrome(int n){
-    int originalNumber=n;
-    int reverse=0;
-    while(n>0){
-        int digit=n%10;
-        reverse=reverse*10+digit;
-        n=n/10;
-    }
-    return originalNumber==reverse;
+
+public class palindrome {
+  public static boolean ispolindrome(String str){
+    int n=str.length();
+    for(int i=0; i<n/2;i++){
+if(str.charAt(i)!=str.charAt(n-1-i)){
+    return false;
 }
+}
+    return true;
+} 
+  public static void main(String[] args) {
+    String str="racecar";
+    System.out.println(ispolindrome (str));
+  } 
 }
